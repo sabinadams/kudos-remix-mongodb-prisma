@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Layout } from '~/components/Layout'
 import { FormField } from '~/components/form-field'
 
-
 export default function Login() {
     const [action, setAction] = useState('login')
     const [formData, setFormData] = useState({
