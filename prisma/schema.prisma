@@ -17,4 +17,10 @@ model User {
   updatedAt DateTime @updatedAt
   email     String   @unique
   password  String
+  profile   Profile
+}
+
+type Profile {
+  firstName String
+  lastName  String
 }
