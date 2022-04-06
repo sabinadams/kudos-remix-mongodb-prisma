@@ -14,7 +14,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export const action: ActionFunction = async ({ request }) => {
     const form = await request.formData();
-    const action = form.get("action");
+    const action = form.get("_action");
     const email = form.get("email");
     const password = form.get("password");
     let firstName = form.get("firstName");
@@ -128,7 +128,6 @@ export default function Login() {
                     <div className="text-xs font-semibold text-center tracking-wide text-red-500 w-full">
                         {formError}
                     </div>
-                    <input type="hidden" name="action" value={action} />
                     <FormField
                         htmlFor="email"
                         label="Email"
@@ -155,9 +154,11 @@ export default function Login() {
                     }
 
                     <div className="w-full text-center">
-                        <input type="submit" className="rounded-xl mt-2 bg-yellow-300 px-3 py-2 text-blue-600 font-semibold transition duration-300 ease-in-out hover:bg-yellow-400 hover:-translate-y-1" value={
-                            action === 'login' ? "Sign In" : "Sign Up"
-                        } />
+                        <button type="submit" name="_action" value={action} className="rounded-xl mt-2 bg-yellow-300 px-3 py-2 text-blue-600 font-semibold transition duration-300 ease-in-out hover:bg-yellow-400 hover:-translate-y-1">
+                            {
+                                action === 'login' ? "Sign In" : "Sign Up"
+                            }
+                        </button>
                     </div>
                 </form>
             </div>
