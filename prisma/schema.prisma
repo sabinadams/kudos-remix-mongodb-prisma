@@ -27,16 +27,17 @@ model Kudo {
   message     String
   createdAt   DateTime   @default(now())
   style       KudoStyle?
-  author      User       @relation(references: [id], fields: [authorId], "AuthoredKudos")
+  author      User       @relation(references: [id], fields: [authorId], onDelete: Cascade, "AuthoredKudos")
   authorId    String     @db.ObjectId
   recipient   User       @relation(references: [id], fields: [recipientId], "RecievedKudos")
   recipientId String     @db.ObjectId
 }
 
 type Profile {
-  firstName  String
-  lastName   String
-  department Department? @default(MARKETING)
+  firstName      String
+  lastName       String
+  department     Department? @default(MARKETING)
+  profilePicture String?
 }
 
 type KudoStyle {
