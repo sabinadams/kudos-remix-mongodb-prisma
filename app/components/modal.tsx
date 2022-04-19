@@ -1,5 +1,5 @@
 import { useNavigate } from "@remix-run/react";
-import { Portal } from "./Portal";
+import { Portal } from "./portal";
 
 interface props {
     children: React.ReactNode,

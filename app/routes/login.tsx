@@ -1,6 +1,6 @@
 // login.tsx
 import { useState, useEffect, useRef } from 'react'
-import { Layout } from '~/components/Layout'
+import { Layout } from '~/components/layout'
 import { FormField } from '~/components/form-field'
 import { validateEmail, validateName, validatePassword } from '~/utils/validators.server'
 import { ActionFunction, json, LoaderFunction, redirect } from '@remix-run/node'
