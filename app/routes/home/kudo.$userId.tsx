@@ -1,5 +1,5 @@
 import { getUserById } from "~/utils/user.server"
-import { Modal } from '~/components/Modal';
+import { Modal } from '~/components/modal';
 import { getUser } from '~/utils/auth.server'
 
 import { useLoaderData, useActionData } from "@remix-run/react"
